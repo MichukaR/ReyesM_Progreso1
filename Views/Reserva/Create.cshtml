@@ -25,18 +25,44 @@
             </div>
             <div class="form-group">
                 <label asp-for="ValorAPagar" class="control-label"></label>
-                <input asp-for="ValorAPagar" class="form-control" />
-                <span asp-validation-for="ValorAPagar" class="text-danger"></span>
+                <button onclick="calcularDias()" class="btn btn-outline-primary">Calcular Valor</button>
+                <div id="resultado"></div>
+                <p></p>
             </div>
             <div class="form-group">
                 <label asp-for="infromacionCliente" class="control-label"></label>
                 <input asp-for="infromacionCliente" class="form-control" />
                 <span asp-validation-for="infromacionCliente" class="text-danger"></span>
             </div>
+            <p></p>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
+        <script>
+            function calcularDias() {
+                const fechaInicioInput = document.getElementById("fecha_entrada");
+                const fechaFinInput = document.getElementById("fecha_salida");
+                const resultadoDiv = document.getElementById("resultado");
+
+                const fechaInicio = new Date(fechaInicioInput.value);
+                const fechaFin = new Date(fechaFinInput.value);
+                
+
+                // Calcula la diferencia en milisegundos
+                const diferenciaMilisegundos = fechaFin.getTime() - fechaInicio.getTime();
+
+                // Convierte la diferencia de milisegundos a días
+                const diferenciaDias = Math.ceil(diferenciaMilisegundos / (1000 * 60 * 60 * 24));
+                const TotalValor = diferenciaDias*15;
+
+                if (diferenciaDias < 0) {
+                    resultadoDiv.textContent = "La fecha de fin debe ser posterior a la fecha de inicio.";
+                } else {
+                    resultadoDiv.textContent = `El valor a pagar es: $ ${TotalValor} `;
+                }
+            }
+        </script>
     </div>
 </div>
 

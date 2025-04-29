@@ -20,3 +20,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+.mi-imagen-home {
+  width: 400px;
+  height: 500px;
+  object-fit: cover; /* Opcional: Para controlar cómo se ajusta la imagen al contenedor */
+}
