@@ -1,0 +1,49 @@
+@model MichelleReyesP1.Models.Reserva
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Reserva</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="fecha_entrada" class="control-label"></label>
+                <input asp-for="fecha_entrada" class="form-control" />
+                <span asp-validation-for="fecha_entrada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fecha_salida" class="control-label"></label>
+                <input asp-for="fecha_salida" class="form-control" />
+                <span asp-validation-for="fecha_salida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorAPagar" class="control-label"></label>
+                <input asp-for="ValorAPagar" class="form-control" />
+                <span asp-validation-for="ValorAPagar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="infromacionCliente" class="control-label"></label>
+                <input asp-for="infromacionCliente" class="form-control" />
+                <span asp-validation-for="infromacionCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
