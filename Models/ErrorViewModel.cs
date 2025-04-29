@@ -1,4 +1,4 @@
-namespace WebApplication3.Models;
+namespace MichelleReyesP1.Models;
 
 public class ErrorViewModel
 {

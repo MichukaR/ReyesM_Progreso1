@@ -1,8 +1,8 @@
 using System.Diagnostics;
+using MichelleReyesP1.Models;
 using Microsoft.AspNetCore.Mvc;
-using WebApplication3.Models;
 
-namespace WebApplication3.Controllers;
+namespace MichelleReyesP1.Controllers;
 
 public class HomeController : Controller
 {
